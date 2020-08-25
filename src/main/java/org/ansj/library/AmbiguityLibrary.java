@@ -49,7 +49,9 @@ public class AmbiguityLibrary {
 
 	/**
 	 * 根据key获取
-	 * 
+	 *
+	 * @param key
+	 * @return
 	 */
 	public static Forest get(String key) {
 
@@ -77,7 +79,10 @@ public class AmbiguityLibrary {
 
 	/**
 	 * 加载
-	 * 
+	 *
+	 * @param key
+	 * @param kv
+	 * @param reload
 	 * @return
 	 */
 	private static synchronized Forest init(String key, KV<String, Forest> kv, boolean reload) {
@@ -153,10 +158,9 @@ public class AmbiguityLibrary {
 
 	/**
 	 * 动态添加
-	 * 
-	 * @param dicDefault
-	 * @param dicDefault2
-	 * @param dic2
+	 *
+	 * @param key
+	 * @param path
 	 */
 	public static void put(String key, String path) {
 		put(key, path, null);

@@ -21,9 +21,6 @@ public class DicLibraryTest {
 	/**
 	 * 关键词增加
 	 *
-	 * @param keyword 所要增加的关键词
-	 * @param nature 关键词的词性
-	 * @param freq 关键词的词频
 	 */
 	@Test
 	public void insertTest() {
@@ -40,8 +37,6 @@ public class DicLibraryTest {
 
 	/**
 	 * 增加关键词
-	 *
-	 * @param keyword
 	 */
 	@Test
 	public void insertTest2() {

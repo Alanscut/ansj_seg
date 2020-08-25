@@ -117,10 +117,9 @@ public class SynonymsLibrary {
 
 	/**
 	 * 动态添加
-	 * 
-	 * @param dicDefault
-	 * @param dicDefault2
-	 * @param dic2
+	 *
+	 * @param key
+	 * @param path
 	 */
 	public static void put(String key, String path) {
 		put(key, path, null);
@@ -177,7 +176,8 @@ public class SynonymsLibrary {
 
 	/**
 	 * 覆盖更新同义词 [中国, 中华, 我国] -> replace([中国,华夏]) -> [中国,华夏]
-	 * 
+	 *
+	 * @param key
 	 * @param words
 	 */
 	public static void insert(String key, String[] words) {
@@ -230,7 +230,8 @@ public class SynonymsLibrary {
 
 	/**
 	 * 合并更新同义词 覆盖更新同义词 [中国, 中华, 我国] -> append([中国,华夏]) -> [中国, 中华, 我国 , 华夏]
-	 * 
+	 *
+	 * @param key
 	 * @param words
 	 */
 	public static void append(String key, String[] words) {
@@ -262,8 +263,9 @@ public class SynonymsLibrary {
 
 	/**
 	 * 从同义词组中删除掉一个词 [中国, 中华, 我国] -> remove(我国) -> [中国, 中华]
-	 * 
-	 * @param words
+	 *
+	 * @param key
+	 * @param word
 	 */
 	public static void remove(String key, String word) {
 

@@ -3,9 +3,7 @@ package org.ansj.splitWord;
 public interface GetWords {
 	/**
 	 * 全文全词全匹配
-	 * 
-	 * @param str
-	 *            传入的需要分词的句子
+	 *
 	 * @return 返还分完词后的句子
 	 */
 	public String allWords();

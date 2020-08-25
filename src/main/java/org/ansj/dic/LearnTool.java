@@ -49,8 +49,10 @@ public class LearnTool {
 
 	/**
 	 * 公司名称学习.
-	 * 
+	 *
 	 * @param graph
+	 * @param splitWord
+	 * @param forests
 	 */
 	public void learn(Graph graph, SplitWord splitWord, Forest... forests) {
 

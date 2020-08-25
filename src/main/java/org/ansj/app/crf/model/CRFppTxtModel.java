@@ -26,8 +26,9 @@ public class CRFppTxtModel extends Model {
 
 	/**
 	 * 解析crf++生成的可可视txt文件
-	 * 
+	 * @param modelPath
 	 * @return
+	 * @throws Exception
 	 */
 	@Override
 	public CRFppTxtModel loadModel(String modelPath) throws Exception {
@@ -66,16 +67,12 @@ public class CRFppTxtModel extends Model {
 
 	/**
 	 * 加载特征值 //11:*6:_x-1/的,
-	 * 
-	 * @param maxId
-	 * 
+	 *
 	 * @param featureIndex
-	 * 
 	 * @param br
 	 * @return
 	 * @throws Exception
 	 */
-
 	private TreeMap<Integer, Pair<String, String>> loadFeatureName(Map<String, Integer> featureIndex, BufferedReader br) throws Exception {
 
 		TreeMap<Integer, Pair<String, String>> featureNames = new TreeMap<Integer, Pair<String, String>>();
@@ -155,10 +152,10 @@ public class CRFppTxtModel extends Model {
 
 	/**
 	 * 加载特征权重
-	 * 
+	 *
 	 * @param br
-	 * @param featureNames
 	 * @param statusCoven
+	 * @param featureNames
 	 * @throws Exception
 	 */
 	private void loadFeatureWeight(BufferedReader br, int[] statusCoven, TreeMap<Integer, Pair<String, String>> featureNames) throws Exception {

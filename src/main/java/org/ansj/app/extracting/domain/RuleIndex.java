@@ -20,6 +20,7 @@ public class RuleIndex {
 
 	/**
 	 * 增加规则到RuleIndex
+	 *
 	 * @param rule
 	 */
 	public void add(Rule rule) {

@@ -46,7 +46,8 @@ public class Result implements Iterable<Term> {
 
 	/**
 	 * 调用一个发现引擎
-	 * 
+	 *
+	 * @param re
 	 * @return
 	 */
 	public Result recognition(Recognition re) {
@@ -66,6 +67,7 @@ public class Result implements Iterable<Term> {
 
 	/**
 	 * 返回没有词性的切分结果
+	 *
 	 * @return
 	 */
 	public String toStringWithOutNature(){
@@ -74,6 +76,7 @@ public class Result implements Iterable<Term> {
 	
 	/**
 	 * 返回没有词性的切分结果
+	 *
 	 * @return
 	 */
 	public String toStringWithOutNature(String split) {

@@ -51,6 +51,7 @@ public class DicLibrary {
 	/**
 	 * 关键词增加
 	 *
+	 * @param key
 	 * @param keyword 所要增加的关键词
 	 * @param nature 关键词的词性
 	 * @param freq 关键词的词频
@@ -67,6 +68,7 @@ public class DicLibrary {
 	/**
 	 * 关键词增加
 	 *
+	 * @param key
 	 * @param keyword 所要增加的关键词
 	 * @param nature 关键词的词性
 	 * @param freq 关键词的词频
@@ -87,6 +89,7 @@ public class DicLibrary {
 	/**
 	 * 增加关键词
 	 *
+	 * @param key
 	 * @param keyword
 	 */
 	public static void insert(String key, String keyword) {
@@ -96,6 +99,9 @@ public class DicLibrary {
 
 	/**
 	 * 删除关键词
+	 *
+	 * @param key
+	 * @param word
 	 */
 	public static void delete(String key, String word) {
 
@@ -107,6 +113,8 @@ public class DicLibrary {
 
 	/**
 	 * 将用户自定义词典清空
+	 *
+	 * @param key
 	 */
 	public static void clear(String key) {
 		get(key).clear();
@@ -122,7 +130,7 @@ public class DicLibrary {
 	/**
 	 * 根据模型名称获取crf模型
 	 * 
-	 * @param modelName
+	 * @param key
 	 * @return
 	 */
 	public static Forest get(String key) {
@@ -171,12 +179,12 @@ public class DicLibrary {
 
 	/**
 	 * 用户自定义词典加载
-	 * 
+	 *
 	 * @param key
-	 * @param path
+	 * @param kv
+	 * @param reload
 	 * @return
 	 */
-
 	private synchronized static Forest init(String key, KV<String, Forest> kv, boolean reload) {
 		Forest forest = kv.getV();
 		if (forest != null) {
@@ -226,10 +234,10 @@ public class DicLibrary {
 
 	/**
 	 * 动态添加词典
-	 * 
-	 * @param dicDefault
-	 * @param dicDefault2
-	 * @param dic2
+	 *
+	 * @param key
+	 * @param path
+	 * @param forest
 	 */
 	public static void put(String key, String path, Forest forest) {
 		DIC.put(key, KV.with(path, forest));
@@ -238,10 +246,9 @@ public class DicLibrary {
 
 	/**
 	 * 动态添加词典
-	 * 
-	 * @param dicDefault
-	 * @param dicDefault2
-	 * @param dic2
+	 *
+	 * @param key
+	 * @param path
 	 */
 	public static void putIfAbsent(String key, String path) {
 
@@ -252,10 +259,9 @@ public class DicLibrary {
 
 	/**
 	 * 动态添加词典
-	 * 
-	 * @param dicDefault
-	 * @param dicDefault2
-	 * @param dic2
+	 *
+	 * @param key
+	 * @param path
 	 */
 	public static void put(String key, String path) {
 		put(key, path, null);
@@ -263,13 +269,11 @@ public class DicLibrary {
 
 	/**
 	 * 动态添加词典
-	 * 
-	 * @param <T>
-	 * @param <T>
-	 * 
-	 * @param dicDefault
-	 * @param dicDefault2
-	 * @param dic2
+	 *
+	 * @param key
+	 * @param path
+	 * @param forest
+	 * @return
 	 */
 	public static synchronized Forest putIfAbsent(String key, String path, Forest forest) {
 

@@ -151,14 +151,12 @@ public class WapitiCRFModel extends Model {
 
 	/**
 	 * 加载特征值 //11:*6:_x-1/的,
-	 * 
+	 *
 	 * @param featureIndex
-	 * 
 	 * @param br
 	 * @return
 	 * @throws Exception
 	 */
-
 	private List<Pair<String, String>> loadFeatureName(Map<String, Integer> featureIndex, BufferedReader br) throws Exception {
 		String temp = br.readLine();// #qrk#num
 		int featureNum = ObjConver.getIntValue(StringUtil.matcherFirst("\\d+", temp)); // 找到特征个数

@@ -81,6 +81,7 @@ public class Extracting {
 
 	/**
 	 * 传入文本分词并抽取
+	 *
 	 * @param content 需要分析的文本
 	 * @param forests 对文本分词加载的词典
 	 * @return 抽取结果集
@@ -105,6 +106,7 @@ public class Extracting {
 
 	/**
 	 * 传入文本分词并抽取
+	 *
 	 * @param content 需要分析的文本
 	 * @param forests 对文本分词加载的词典
 	 * @return 抽取结果集
@@ -130,6 +132,7 @@ public class Extracting {
 
 	/**
 	 * 对分词后的结果进行抽取
+	 *
 	 * @param terms 分词后的结果
 	 * @return 抽取结果集
 	 */

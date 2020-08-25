@@ -58,9 +58,9 @@ public class StopLibrary {
 
 	/**
 	 * 增加停用词
-	 * 
+	 *
 	 * @param key
-	 * @param regexes
+	 * @param stopWords
 	 */
 	public static void insertStopWords(String key, String... stopWords) {
 		StopRecognition fr = get(key);
@@ -69,9 +69,9 @@ public class StopLibrary {
 
 	/**
 	 * 增加停用词
-	 * 
+	 *
 	 * @param key
-	 * @param regexes
+	 * @param stopWords
 	 */
 	public static void insertStopWords(String key, List<String> stopWords) {
 		StopRecognition fr = get(key);
@@ -84,8 +84,8 @@ public class StopLibrary {
 
 	/**
 	 * 根据模型名称获取crf模型
-	 * 
-	 * @param modelName
+	 *
+	 * @param key
 	 * @return
 	 */
 	public static StopRecognition get(String key) {
@@ -108,10 +108,11 @@ public class StopLibrary {
 	}
 
 	/**
-	 * 用户自定义词典加载
-	 * 
+	 * 根据模型名称获取crf模型
+	 *
 	 * @param key
-	 * @param path
+	 * @param kv
+	 * @param reload
 	 * @return
 	 */
 	private synchronized static StopRecognition init(String key, KV<String, StopRecognition> kv, boolean reload) {
@@ -168,10 +169,10 @@ public class StopLibrary {
 
 	/**
 	 * 动态添加词典
-	 * 
-	 * @param FILTERDefault
-	 * @param FILTERDefault2
-	 * @param FILTER2
+	 *
+	 * @param key
+	 * @param path
+	 * @param stopRecognition
 	 */
 	public static void put(String key, String path, StopRecognition stopRecognition) {
 		STOP.put(key, KV.with(path, stopRecognition));
@@ -180,10 +181,9 @@ public class StopLibrary {
 
 	/**
 	 * 动态添加词典
-	 * 
-	 * @param FILTERDefault
-	 * @param FILTERDefault2
-	 * @param FILTER2
+	 *
+	 * @param key
+	 * @param path
 	 */
 	public static void putIfAbsent(String key, String path) {
 		if (!STOP.containsKey(key)) {
@@ -193,24 +193,20 @@ public class StopLibrary {
 
 	/**
 	 * 动态添加词典
-	 * 
-	 * @param FILTERDefault
-	 * @param FILTERDefault2
-	 * @param FILTER2
+	 *
+	 * @param key
+	 * @param path
 	 */
 	public static void put(String key, String path) {
 		put(key, path, null);
 	}
 
 	/**
-	 * 动态添加词典
-	 * 
-	 * @param <T>
-	 * @param <T>
-	 * 
-	 * @param FILTERDefault
-	 * @param FILTERDefault2
-	 * @param FILTER2
+	 *
+	 * @param key
+	 * @param path
+	 * @param stopRecognition
+	 * @return
 	 */
 	public static synchronized StopRecognition putIfAbsent(String key, String path, StopRecognition stopRecognition) {
 		KV<String, StopRecognition> kv = STOP.get(key);

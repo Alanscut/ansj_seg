@@ -27,17 +27,17 @@ public abstract class Model {
 
 	/**
 	 * 判断当前数据流是否是本实例
-	 * 
-	 * @param is
+	 *
+	 * @param modelPath
 	 * @return
+	 * @throws IOException
 	 */
 	public abstract boolean checkModel(String modelPath) throws IOException;
 
 	/**
 	 * 模型读取
-	 * 
-	 * @param path
-	 * @return
+	 *
+	 * @param modelPath
 	 * @return
 	 * @throws Exception
 	 */
@@ -60,9 +60,9 @@ public abstract class Model {
 
 	/**
 	 * 模型读取
-	 * 
-	 * @param path
-	 * @return
+	 *
+	 * @param c
+	 * @param is
 	 * @return
 	 * @throws Exception
 	 */
@@ -73,7 +73,9 @@ public abstract class Model {
 
 	/**
 	 * 不同的模型实现自己的加载模型类
-	 * 
+	 *
+	 * @param modelPath
+	 * @return
 	 * @throws Exception
 	 */
 	public abstract Model loadModel(String modelPath) throws Exception;
@@ -82,8 +84,8 @@ public abstract class Model {
 
 	/**
 	 * 获得特征所在权重数组
-	 * 
-	 * @param featureStr
+	 *
+	 * @param chars
 	 * @return
 	 */
 	public float[] getFeature(char... chars) {

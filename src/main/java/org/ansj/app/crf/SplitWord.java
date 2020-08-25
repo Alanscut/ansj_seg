@@ -135,8 +135,9 @@ public class SplitWord {
 
 	/**
 	 * 随便给一个词。计算这个词的内聚分值，可以理解为计算这个词的可信度
-	 * 
+	 *
 	 * @param word
+	 * @return
 	 */
 	public float cohesion(String word) {
 

@@ -113,6 +113,7 @@ public class Term implements Serializable {
 	 * 核心分数的最优的路径,越小越好
 	 *
 	 * @param from
+	 * @param asc
 	 */
 	public void setPathSelfScore(Term from, boolean asc) {
 		double score = this.selfScore + from.score;

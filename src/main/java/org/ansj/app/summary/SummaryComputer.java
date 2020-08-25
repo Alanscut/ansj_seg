@@ -253,6 +253,9 @@ public class SummaryComputer {
 	 * 计算一个句子的分数
 	 *
 	 * @param sentence
+	 * @param forest
+	 * @param offset
+	 * @return
 	 */
 	private boolean computeScore(Sentence sentence, SmartForest<Double> forest, boolean offset) {
 		SmartGetWord<Double> sgw = new SmartGetWord<Double>(forest, sentence.value.toLowerCase());

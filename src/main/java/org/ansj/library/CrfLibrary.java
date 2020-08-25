@@ -64,8 +64,8 @@ public class CrfLibrary {
 
 	/**
 	 * 加载CRF模型
-	 * 
-	 * @param modelPath
+	 *
+	 * @param kv
 	 * @return
 	 */
 	private static synchronized SplitWord initCRFModel(KV<String, SplitWord> kv) {
@@ -90,10 +90,9 @@ public class CrfLibrary {
 
 	/**
 	 * 动态添加
-	 * 
-	 * @param dicDefault
-	 * @param dicDefault2
-	 * @param dic2
+	 *
+	 * @param key
+	 * @param path
 	 */
 	public static void put(String key, String path) {
 

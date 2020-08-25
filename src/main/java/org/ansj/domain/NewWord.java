@@ -59,10 +59,9 @@ public class NewWord implements Serializable {
 
 	/**
 	 * 更新发现权重,并且更新词性
-	 * 
-	 * @param version
-	 * @param i
-	 * @param tn
+	 *
+	 * @param nature
+	 * @param freq
 	 */
 	public void update(Nature nature, int freq) {
 		this.score += score * freq;
