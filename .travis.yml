@@ -5,8 +5,6 @@ jdk:
 
 before_install:
   - pwd
-  - mkdir -p /home/travis/build/NLPchina/
-  - cd /home/travis/build/NLPchina/
   - sudo git clone https://github.com/NLPchina/nlp-lang.git
   - sudo chmod -R 777 nlp-lang
   - cd ./nlp-lang
